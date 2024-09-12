@@ -16,8 +16,8 @@ const Links = () => {
         href='/'
         className='flex items-center gap-2 max-sm-gap-1'
       >
-        <Bitcoin size={32} className='' />
-        <h1 className='font-semibold text-xl yellow capitalize '>
+        <Bitcoin size={32} className='text-primary' />
+        <h1 className='font-bold text-xl text-primary italic '>
         Cryptocurrency
         </h1>
       </Link>

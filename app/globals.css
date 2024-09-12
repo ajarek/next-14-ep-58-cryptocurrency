@@ -70,3 +70,6 @@
     @apply bg-background text-foreground;
   }
 }
+.test{
+  color:hsl(47.9 95.8% 53.1%)
+}
