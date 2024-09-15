@@ -75,6 +75,17 @@ const Flags = () => {
                 <div>German</div>
               </div>
             </SelectItem>
+            <SelectItem value='poland'>
+              <div className='flex items-center gap-2'>
+                <Image
+                  src='/images/poland.svg'
+                  alt='poland'
+                  width={32}
+                  height={32}
+                />
+                <div>Poland</div>
+              </div>
+            </SelectItem>
             <SelectItem value='spain'>
               <div className='flex items-center gap-2'>
                 <Image
@@ -86,6 +97,7 @@ const Flags = () => {
                 <div>Spanish</div>
               </div>
             </SelectItem>
+            
           </SelectGroup>
         </SelectContent>
       </Select>

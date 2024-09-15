@@ -37,12 +37,12 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function BarChartBitcoin() {
+export function BarChartBitcoin({description, info1, info2}:{description:string, info1:string, info2:string}) {
   return (
     <Card className="w-full">
       <CardHeader>
         <CardTitle>Bitcoin</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -59,16 +59,16 @@ export function BarChartBitcoin() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="bitcoin" fill="var(--color-bitcoin)" radius={8} />
+            <Bar dataKey="bitcoin" fill="var(--color-bitcoin)" radius={4} barSize={32}/>
           </BarChart>
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 font-medium leading-none">
-        This month`s trend <TrendingUp className="h-4 w-4" />
+        {info1} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+         {info2}
         </div>
       </CardFooter>
     </Card>
