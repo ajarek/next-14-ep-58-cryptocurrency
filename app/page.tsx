@@ -2,6 +2,7 @@ import InfoCryptocurrency from '@/components/InfoCryptocurrency'
 import { BarChartBitcoin } from '@/components/BarChartBitcoin'
 import { BarChartEthereum } from '@/components/BarChartEthereum'
 import { RadialCharCrypto } from '../components/RadialCharCrypto'
+import Chatbot from '@/components/Chatbot'
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
           info2=' View data in real time.'
         />
       </div>
+      <Chatbot/>
     </main>
   )
 }
