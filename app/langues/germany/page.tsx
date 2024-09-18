@@ -2,6 +2,7 @@ import InfoCryptocurrency from '@/components/InfoCryptocurrency'
 import { BarChartBitcoin } from '@/components/BarChartBitcoin'
 import { BarChartEthereum } from '@/components/BarChartEthereum'
 import { RadialCharCrypto } from '@/components/RadialCharCrypto'
+import Chatbot from '@/components/Chatbot'
 
 const Germany = () => {
   return (
@@ -30,6 +31,9 @@ const Germany = () => {
           info2='Daten in Echtzeit anzeigen.'
         />
       </div>
+      <Chatbot greeting=' Ich bin Jarobot #0. Ich kann Ihnen bei Ihrer Krypto-Investition helfen. Was kann ich heute für Sie tun?'
+       prompt1='Was ist die nächste 100x-Münze?'  prompt2='Was ist derzeit der beste Krypto-Handel?' prompt3='Finden Sie die Top-5-Kryptos mit der höchsten TM-Trader-Bewertung.' prompt4='Welches Krypto-Asset verfügt über die beste Technologie?'
+       info='Fragen Sie mich etwas über Kryptowährungen!' />
     </main>
   )
 }

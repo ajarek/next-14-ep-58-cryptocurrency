@@ -31,7 +31,14 @@ export default function Home() {
           info2=' View data in real time.'
         />
       </div>
-      <Chatbot/>
+      <Chatbot
+        greeting=' I’m Jarobot #0. I can help you with your crypto investing. What can I do for you today?'
+        prompt1='What is the next 100x coin?'
+        prompt2='What is the best crypto trade right now?'
+        prompt3='Find the top 5 cryptos that have the highest TM Trader grade.'
+        prompt4='What crypto asset has the best technology?'
+        info='Ask me anything about cryptocurrencies!'
+      />
     </main>
   )
 }

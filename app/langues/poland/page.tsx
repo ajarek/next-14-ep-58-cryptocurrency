@@ -2,10 +2,10 @@ import InfoCryptocurrency from '@/components/InfoCryptocurrency'
 import { BarChartBitcoin } from '@/components/BarChartBitcoin'
 import { BarChartEthereum } from '@/components/BarChartEthereum'
 import { RadialCharCrypto } from '@/components/RadialCharCrypto'
-
+import Chatbot from '@/components/Chatbot'
 export default function Home() {
   return (
-    <main className='flex min-h-[calc(100vh-64px)] flex-col items-center justify-between p-4 gap-4'>
+    <main className=' flex min-h-[calc(100vh-64px)] flex-col items-center justify-between p-4 gap-4'>
       <InfoCryptocurrency
         text1='Najlepsze bieżące wzrosty'
         text2='Najgorsze bieżące wzrosty'
@@ -29,7 +29,16 @@ export default function Home() {
           info1='Aktualny trend'
           info2=' Przeglądaj dane w czasie rzeczywistym.'
         />
+        
       </div>
+      <Chatbot
+          greeting=' Jestem Jarobot nr 0. Pomogę Ci w inwestowaniu w kryptowaluty. Co mogę dzisiaj dla Ciebie zrobić?'
+          prompt1='Jaka jest następna moneta 100x?'
+          prompt2='Jaki jest obecnie najlepszy handel kryptowalutami?'
+          prompt3='Znajdź 5 najlepszych kryptowalut, które mają najwyższą ocenę TM Trader.'
+          prompt4='Jaki zasób kryptograficzny ma najlepszą technologię?'
+          info='Zapytaj mnie o cokolwiek na temat kryptowalut!'
+        />
     </main>
   )
 }
