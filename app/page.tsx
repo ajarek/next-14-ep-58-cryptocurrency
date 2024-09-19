@@ -3,6 +3,7 @@ import { BarChartBitcoin } from '@/components/BarChartBitcoin'
 import { BarChartEthereum } from '@/components/BarChartEthereum'
 import { RadialCharCrypto } from '../components/RadialCharCrypto'
 import Chatbot from '@/components/Chatbot'
+import CryptocurrencyTable from '@/components/CryptocurrencyTable'
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
         prompt4='What crypto asset has the best technology?'
         info='Ask me anything about cryptocurrencies!'
       />
+      <CryptocurrencyTable/>
     </main>
   )
 }
