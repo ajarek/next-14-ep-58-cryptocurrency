@@ -1,5 +1,5 @@
 'use client'
-import { Bitcoin } from 'lucide-react'
+
 import Image from 'next/image'
 import { Menu } from 'lucide-react'
 import Link from 'next/link'
@@ -23,43 +23,49 @@ const MobileNav = () => {
         className='border-none bg-card text-card-foreground  shadow-none lg:hidden '
       >
         <SheetHeader>
-          <div className='flex items-center gap-2 max-sm-gap-1'>
-            <Bitcoin
-              size={32}
-              className='text-primary'
-            />
-            <h1 className='font-bold text-xl text-primary italic '>
-              Cryptocurrency
-            </h1>
-          </div>
+        <div
+        className='relative flex items-center gap-2 max-sm-gap-1'
+      >
+          <Image
+            src={'/images/crypto.png'}
+            width={32}
+            height={32}
+            alt={'crypto logo'}
+          />
+        <h1 className='font-bold text-xl text-primary italic '>
+          Cryptocurrency
+        </h1>
+      </div>
         </SheetHeader>
         <div className='flex flex-col gap-4 mt-4 '>
           <Flags />
           <Link
-            href='/'
-            className={`flex items-center gap-2  text-xl hover:text-primary `}
-          >
-            <Image
-              src={'/images/bitcoin.png'}
-              width={32}
-              height={32}
-              alt={'bitcoin'}
-            />
-            <h4>$57,211.10</h4>
-          </Link>
+          href='https://bitcoin.org/en/'
+          target='_blank'
+          className={`flex items-center gap-2  text-xl hover:text-primary `}
+        >
+          <Image
+            src={'/images/bitcoin.png'}
+            width={32}
+            height={32}
+            alt={'bitcoin'}
+          />
+          <h4>$57,211.10</h4>
+        </Link>
 
-          <Link
-            href='/reviews'
-            className={`flex items-center gap-2  text-xl hover:text-primary `}
-          >
-            <Image
-              src={'/images/ethereum.png'}
-              width={32}
-              height={32}
-              alt={'bitcoin'}
-            />
-            <h4>$2,338.48</h4>
-          </Link>
+        <Link
+          href='https://ethereum.org/en/'
+           target='_blank'
+          className={`flex items-center gap-2  text-xl hover:text-primary `}
+        >
+          <Image
+            src={'/images/ethereum.png'}
+            width={32}
+            height={32}
+            alt={'ethereum'}
+          />
+          <h4>$2,338.48</h4>
+        </Link>
         </div>
       </SheetContent>
     </Sheet>

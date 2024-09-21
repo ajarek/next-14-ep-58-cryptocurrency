@@ -3,6 +3,7 @@ import { BarChartBitcoin } from '@/components/BarChartBitcoin'
 import { BarChartEthereum } from '@/components/BarChartEthereum'
 import { RadialCharCrypto } from '@/components/RadialCharCrypto'
 import Chatbot from '@/components/Chatbot'
+import CryptocurrencyTable from '@/components/CryptocurrencyTable'
 export default function Home() {
   return (
     <main className=' flex min-h-[calc(100vh-64px)] flex-col items-center justify-between p-4 gap-4'>
@@ -39,6 +40,7 @@ export default function Home() {
           prompt4='Jaki zasób kryptograficzny ma najlepszą technologię?'
           info='Zapytaj mnie o cokolwiek na temat kryptowalut!'
         />
+        <CryptocurrencyTable title='Długość listy kryptowalut:' logo='Logo' name='Nazwa' price='Cena' price24h='Zmiana ceny 24h' price24hProcent='Zmiana % ceny 24h' total='Całkowity wolumen '/>
     </main>
   )
 }

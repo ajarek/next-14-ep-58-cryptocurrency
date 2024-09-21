@@ -12,8 +12,16 @@ import {
 } from '@/components/ui/table'
 import React from 'react'
 import AddButton from '@/components/AddButton'
-
-const CryptocurrencyTable = () => {
+type CryptocurrencyTableProps={
+  title:string
+  logo: string
+  name:string
+  price:string
+  price24h:string
+  price24hProcent:string
+  total:string
+}
+const CryptocurrencyTable = ({title, logo, name, price, price24h, price24hProcent, total}:CryptocurrencyTableProps) => {
   const [end, setEnd] = React.useState(10)
   const handleButton = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLInputElement
@@ -21,7 +29,7 @@ const CryptocurrencyTable = () => {
   }
   return (
     <div className='container p-4'>
-      <h1 className='text-xl font-semibold'>Cryptocurrency list length: {crypto.length}</h1>
+      <h1 className='text-xl font-semibold'>{title} {crypto.length}</h1>
       <Table>
         <TableCaption>
           <AddButton
@@ -31,12 +39,12 @@ const CryptocurrencyTable = () => {
         </TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className=''>Logo</TableHead>
-            <TableHead className=''>Name</TableHead>
-            <TableHead className=''>Price</TableHead>
-            <TableHead className=''>Price change 24h</TableHead>
-            <TableHead className='max-sm:hidden'>Price change % 24h</TableHead>
-            <TableHead className='max-sm:hidden'>Total volume</TableHead>
+            <TableHead className=''>{logo}</TableHead>
+            <TableHead className=''>{name}</TableHead>
+            <TableHead className=''>{price}</TableHead>
+            <TableHead className=''>{price24h}</TableHead>
+            <TableHead className='max-sm:hidden'>{price24hProcent}</TableHead>
+            <TableHead className='max-sm:hidden'>{total}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

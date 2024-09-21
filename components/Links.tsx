@@ -1,6 +1,5 @@
 'use client'
 
-import { Bitcoin } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Flags from './Flags'
@@ -9,12 +8,14 @@ const Links = () => {
   return (
     <div className='max-lg:hidden w-full flex items-center justify-between   '>
       <div
-        className='flex items-center gap-2 max-sm-gap-1'
+        className='relative flex items-center gap-2 max-sm-gap-1'
       >
-        <Bitcoin
-          size={32}
-          className='text-primary'
-        />
+          <Image
+            src={'/images/crypto.png'}
+            width={32}
+            height={32}
+            alt={'crypto logo'}
+          />
         <h1 className='font-bold text-xl text-primary italic '>
           Cryptocurrency
         </h1>
@@ -22,7 +23,8 @@ const Links = () => {
 
       <div className='flex items-center gap-8 mr-4 '>
         <Link
-          href='/'
+          href='https://bitcoin.org/en/'
+          target='_blank'
           className={`flex items-center gap-2  text-xl hover:text-primary `}
         >
           <Image
@@ -35,14 +37,15 @@ const Links = () => {
         </Link>
 
         <Link
-          href='/reviews'
+          href='https://ethereum.org/en/'
+           target='_blank'
           className={`flex items-center gap-2  text-xl hover:text-primary `}
         >
           <Image
             src={'/images/ethereum.png'}
             width={32}
             height={32}
-            alt={'bitcoin'}
+            alt={'ethereum'}
           />
           <h4>$2,338.48</h4>
         </Link>

@@ -3,6 +3,7 @@ import { BarChartBitcoin } from '@/components/BarChartBitcoin'
 import { BarChartEthereum } from '@/components/BarChartEthereum'
 import { RadialCharCrypto } from '@/components/RadialCharCrypto'
 import Chatbot from '@/components/Chatbot'
+import CryptocurrencyTable from '@/components/CryptocurrencyTable'
 
 const Spain = () => {
   return (
@@ -34,6 +35,7 @@ const Spain = () => {
       <Chatbot greeting=' Soy Jarobot #0. Puedo ayudarte con tu inversión en criptomonedas. ¿Qué puedo hacer por ti hoy?'
        prompt1='¿Cuál es la próxima moneda de 100x?'  prompt2='¿Cuál es el mejor comercio de criptomonedas en este momento?' prompt3='Encuentre las 5 principales criptomonedas que tienen la calificación más alta de TM Trader.' prompt4='¿Qué criptoactivo tiene la mejor tecnología?'
        info='¡Pregúntame cualquier cosa sobre criptomonedas!' />
+       <CryptocurrencyTable title='Longitud de la lista de criptomonedas:' logo='Logo' name='Nombre' price='Precio' price24h='Cambio de precio 24h' price24hProcent='Cambio de precio % 24h' total='Volumen total'/>
     </main>
   )
 }
