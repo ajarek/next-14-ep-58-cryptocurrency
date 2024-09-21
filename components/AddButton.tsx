@@ -36,7 +36,7 @@ type Props={
           <Button
             key={inx}
             onClick={onClick}
-            className='focus:bg-primary/60'
+            className='bg-blue-700 hover:bg-blue-500 text-white focus:bg-blue-500'
           >
             {inx + 1}
           </Button>
