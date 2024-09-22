@@ -10,6 +10,9 @@ export const {
 } = NextAuth({
   pages: {
     error: '/register',
+    // signIn: '/login',
+    // verifyRequest: '/login', // (used for check email message)
+    // signUp: '/signup',
   },
   theme: {
     colorScheme: 'dark', // "auto" | "dark" | "light"
@@ -25,7 +28,7 @@ export const {
         username: { type: 'text', required: true },
         password: { type: 'password', required: true },
       },
-      async authorize(credentials: any) {
+      async authorize(credentials: any) {  
         await connectToDb()
         try {
           const user = await User.findOne({ username: credentials.username })
