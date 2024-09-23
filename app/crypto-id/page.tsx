@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 const CryptoId = ({searchParams,}: {searchParams: {
     id: string
     name: string
-    price: string
+    current_price: string
     image: string
     quantity: string
   }
@@ -20,7 +20,7 @@ const CryptoId = ({searchParams,}: {searchParams: {
   type Cart = {
     id: number
     name: string
-    price: number
+    current_price: number
     quantity: number
     image: string
   }
@@ -34,7 +34,7 @@ const CryptoId = ({searchParams,}: {searchParams: {
   }
 
  const decrement=() =>{
-  const actualQuantity=+quantityPanel<1?Number(quantityPanel) - 1:1
+  const actualQuantity=+quantityPanel>1?Number(quantityPanel) - 1:1
   setQuantityPanel(actualQuantity)
      
 }
@@ -62,7 +62,7 @@ const handleCart = (item: Cart) => {
 
       <div className=" w-full flex flex-col  gap-8">
         <h1 className="text-3xl font-bold"><span className='text-gray-400 text-lg'>name: </span>{panel?.name}</h1>
-        <p className="text-2xl font-bold"><span className='text-gray-400 text-lg'>price: </span>${panel?.current_price}</p>
+        <p className="text-2xl font-bold"><span className='text-gray-400 text-lg'>current_price: </span>${panel?.current_price}</p>
         <p className="text-2xl font-bold"><span className='text-gray-400 text-lg'>total price: </span>${(Number(panel?.current_price)*quantityPanel).toFixed(2)}</p>
 
         <div className="flex items-center gap-2 ">

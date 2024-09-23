@@ -101,7 +101,7 @@ const CryptocurrencyTable = ({
                 <TableCell className=''>
                   {cr.current_price >= 0.01 ? (
                     <Link
-                      href={`/crypto-id?id=${cr.id}&name=${cr.name}&price=${cr.current_price}&image=${cr.image} &quantity= ${cr.quantity}`}
+                      href={`/crypto-id?id=${cr.id}&name=${cr.name}&current_price=${cr.current_price}&image=${cr.image} &quantity= ${cr.quantity}`}
                       className='bg-primary text-primary-foreground px-2 py-1 rounded-sm'
                     >
                       Buy

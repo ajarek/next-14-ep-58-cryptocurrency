@@ -2,31 +2,29 @@ import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
 type Item = {
-    id: number
-    name: string
-    price: number
-    quantity: number
-    image: string
-  }
-  
+  id: number
+  name: string
+  current_price: number
+  quantity: number
+  image: string
+}
+
 type ItemState = {
-    items: Item[]
-    addItemToCart: (item: Item) => void
-    removeItemFromCart: (id: number) => void
-    total: () => number
-    removeAll: () => void
-    increment: (id: number) => void
-    decrement: (id: number) => void
-    removeAllFromCart:()=>void
-    lengthItems:()=>number
-  }
-    
+  items: Item[]
+  addItemToCart: (item: Item) => void
+  removeItemFromCart: (id: number) => void
+  total: () => number
+  removeAll: () => void
+  increment: (id: number) => void
+  decrement: (id: number) => void
+  removeAllFromCart: () => void
+}
+
 export const useCartStore = create<ItemState>()(
   persist(
     (set, get) => ({
-      items:[],
-      lengthItems:() =>
-        get().items.reduce((acc, item) => acc + item.quantity, 0),
+      items: [],
+
       addItemToCart: (item: Item) =>
         set((state) => ({
           items: [item, ...state.items],
@@ -37,10 +35,13 @@ export const useCartStore = create<ItemState>()(
           items: state.items.filter((item) => item.id !== id),
         })),
 
-        removeAllFromCart:()=>set({items:[]}),
+      removeAllFromCart: () => set({ items: [] }),
 
       total: () =>
-        get().items.reduce((acc, item) => acc + item.price * item.quantity, 0),
+        get().items.reduce(
+          (acc, item) => acc + item.current_price * item.quantity,
+          0
+        ),
       removeAll: () => set({ items: [] }),
 
       increment: (id: number) =>
@@ -59,7 +60,15 @@ export const useCartStore = create<ItemState>()(
           .map(() =>
             set((state) => ({
               items: state.items.map((item) =>
-                item.id === id ? { ...item, quantity: item.quantity===1?item.quantity=1 :item.quantity - 1 } : item
+                item.id === id
+                  ? {
+                      ...item,
+                      quantity:
+                        item.quantity === 1
+                          ? (item.quantity = 1)
+                          : item.quantity - 1,
+                    }
+                  : item
               ),
             }))
           ),

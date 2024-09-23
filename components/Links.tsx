@@ -3,23 +3,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Flags from './Flags'
+import { ShoppingCart } from 'lucide-react'
+import { useCartStore } from '@/store/cartStore'
 
 const Links = () => {
+  const { items } = useCartStore()
   return (
     <div className='max-lg:hidden w-full flex items-center justify-between   '>
-      <div
+      <Link
+        href='/'
         className='relative flex items-center gap-2 max-sm-gap-1'
       >
-          <Image
-            src={'/images/crypto.png'}
-            width={32}
-            height={32}
-            alt={'crypto logo'}
-          />
+        <Image
+          src={'/images/crypto.png'}
+          width={32}
+          height={32}
+          alt={'crypto logo'}
+        />
         <h1 className='font-bold text-xl text-primary italic '>
           Cryptocurrency
         </h1>
-      </div>
+      </Link>
 
       <div className='flex items-center gap-8 mr-4 '>
         <Link
@@ -38,7 +42,7 @@ const Links = () => {
 
         <Link
           href='https://ethereum.org/en/'
-           target='_blank'
+          target='_blank'
           className={`flex items-center gap-2  text-xl hover:text-primary `}
         >
           <Image
@@ -50,6 +54,21 @@ const Links = () => {
           <h4>$2,338.48</h4>
         </Link>
         <Flags />
+
+        {items.length > 0 && (
+          <Link
+            href='/cart'
+            className={`flex items-center  px-3 rounded-sm `}
+          >
+            <ShoppingCart
+              size={24}
+              className=''
+            />
+            <div className='pb-3 text-red-500'>
+              {items.reduce((acc, item) => acc + item.quantity, 0)}
+            </div>
+          </Link>
+        )}
       </div>
     </div>
   )
