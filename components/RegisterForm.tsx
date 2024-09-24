@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { User, UserWithoutId } from '@/lib/models'
 import { addUser } from '@/lib/action'
 import { useRouter } from 'next/navigation'
@@ -20,7 +20,7 @@ const RegisterForm = () => {
 
   const router = useRouter()
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
     const formData: UserWithoutId = {
       username,
@@ -43,7 +43,7 @@ const RegisterForm = () => {
       <div className="flex justify-center p-2">
         <Link href="/">
           <Image
-            src='/images/receipt.svg'
+            src='/images/crypto.png'
             alt="logo"
             width={64}
             height={64}

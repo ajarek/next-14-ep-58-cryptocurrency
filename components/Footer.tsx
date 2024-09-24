@@ -5,6 +5,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='flex flex-col items-center gap-8 pb-8'>
+      
       <Link
         href='/'
         className='relative flex items-center gap-2 max-sm-gap-1'

@@ -3,7 +3,6 @@
 import React from 'react'
 import { useCartStore } from '@/store/cartStore'
 import Image from 'next/image'
-import { useToast } from '@/hooks/use-toast'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 const Cart = () => {
@@ -16,8 +15,6 @@ const Cart = () => {
     total,
     removeAll,
   } = useCartStore()
-  const { toast } = useToast()
-  const date = new Date()
   const router = useRouter()
 
   return (
@@ -67,26 +64,7 @@ const Cart = () => {
               Delete All
             </Button>
             <Button
-              onClick={() => {
-                toast({
-                  title: 'Order has been submitted.',
-                  description:
-                    'amount to pay: ' +
-                    total().toFixed(2) +
-                    '$, ' +
-                    'date: ' +
-                    date.toLocaleString('en-US', {
-                      weekday: 'long',
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    }),
-                })
-                setTimeout(() => {
-                  removeAll()
-                  router.push('/')
-                }, 2000)
-              }}
+             onClick={() => router.push('/payment')}
             >
              I buy Cryptocurrencies
             </Button>

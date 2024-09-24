@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { User } from '@/lib/models'
@@ -9,7 +10,7 @@ export const {
   handlers: { GET, POST },
 } = NextAuth({
   pages: {
-    error: '/register',
+    error: '/',
     // signIn: '/login',
     // verifyRequest: '/login', // (used for check email message)
     // signUp: '/signup',
@@ -17,7 +18,7 @@ export const {
   theme: {
     colorScheme: 'dark', // "auto" | "dark" | "light"
     brandColor: '#0E78F9', // Hex color code
-    logo: '/images/receipt.svg', // Absolute URL to image
+    logo: '/images/crypto.png', // Absolute URL to image
     buttonText: '#ffffff', // Hex color code
   },
 
@@ -71,15 +72,17 @@ export const {
           admin: token.admin,
           image: token.image,
         },
-      }
+      }     
     },
 
     async redirect({ url, baseUrl }) {
-      return `${baseUrl}`
+      return `${baseUrl}/payment`
     },
   },
   secret: process.env.AUTH_SECRET,
   session: {
     strategy: 'jwt',
   },
+
+  
 })
