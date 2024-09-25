@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import LogoutBtn from '@/components/LogoutBtn'
+import { Session } from 'next-auth'
 
-const Logout = async ({ session }: any) => {
+const Logout = async ({ session }: Session) => {
   return (
     <>
       {session ? (

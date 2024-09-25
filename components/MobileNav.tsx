@@ -5,7 +5,6 @@ import { Menu, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetTrigger,
   SheetHeader,

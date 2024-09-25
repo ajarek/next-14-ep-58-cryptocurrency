@@ -50,7 +50,7 @@ export const {
   ],
 
   callbacks: {
-    async jwt({ token, user, session }: any) {
+    async jwt({ token, user }: any) {
       if (user) {
         return {
           ...token,
@@ -62,7 +62,7 @@ export const {
       }
       return token
     },
-    async session({ session, token, user }: any) {
+    async session({ session, token }: any) {
       return {
         ...session,
         user: {
@@ -75,7 +75,7 @@ export const {
       }
     },
 
-    async redirect({ url, baseUrl }) {
+    async redirect({ baseUrl }) {
       return `${baseUrl}/payment`
     },
   },

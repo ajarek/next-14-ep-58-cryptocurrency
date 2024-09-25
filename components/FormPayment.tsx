@@ -1,4 +1,5 @@
 'use client'
+
 import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -7,15 +8,7 @@ import { useToast } from '@/hooks/use-toast'
 import { useCartStore } from '@/store/cartStore'
 
 const FormPayment = () => {
-  const {
-    addItemToCart,
-    items,
-    increment,
-    decrement,
-    removeItemFromCart,
-    total,
-    removeAll,
-  } = useCartStore()
+  const { items, total, removeAll } = useCartStore()
   const router = useRouter()
   const { toast } = useToast()
 
