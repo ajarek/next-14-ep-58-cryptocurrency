@@ -30,17 +30,24 @@ export default function Home() {
           info1='Aktualny trend'
           info2=' Przeglądaj dane w czasie rzeczywistym.'
         />
-        
       </div>
       <Chatbot
-          greeting=' Jestem Jarobot nr 0. Pomogę Ci w inwestowaniu w kryptowaluty. Co mogę dzisiaj dla Ciebie zrobić?'
-          prompt1='Jaka jest następna moneta 100x?'
-          prompt2='Jaki jest obecnie najlepszy handel kryptowalutami?'
-          prompt3='Znajdź 5 najlepszych kryptowalut, które mają najwyższą ocenę TM Trader.'
-          prompt4='Jaki zasób kryptograficzny ma najlepszą technologię?'
-          info='Zapytaj mnie o cokolwiek na temat kryptowalut!'
-        />
-        <CryptocurrencyTable title='Długość listy kryptowalut:' logo='Logo' name='Nazwa' price='Cena' price24h='Zmiana ceny 24h' price24hProcent='Zmiana % ceny 24h' total='Całkowity wolumen '/>
+        greeting=' Jestem Jarobot nr 0. Pomogę Ci w inwestowaniu w kryptowaluty. Co mogę dzisiaj dla Ciebie zrobić?'
+        prompt1='Jaka jest następna moneta 100x?'
+        prompt2='Jaki jest obecnie najlepszy handel kryptowalutami?'
+        prompt3='Znajdź 5 najlepszych kryptowalut, które mają najwyższą ocenę TM Trader.'
+        prompt4='Jaki zasób kryptograficzny ma najlepszą technologię?'
+        info='Zapytaj mnie o cokolwiek na temat kryptowalut!'
+      />
+      <CryptocurrencyTable
+        title='Długość listy kryptowalut:'
+        logo='Logo'
+        name='Nazwa'
+        price='Cena'
+        price24h='Zmiana ceny 24h'
+        price24hProcent='Zmiana % ceny 24h'
+        total='Całkowity wolumen '
+      />
     </main>
   )
 }

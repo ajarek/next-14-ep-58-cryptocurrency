@@ -25,15 +25,15 @@ const Cart = () => {
             {items.map((item) => (
               <div
                 key={item.id}
-                className='w-full grid grid-cols-6 place-items-center  border-b-2 border-gray-300 gap-4 p-4 '
+                className='w-full grid grid-cols-6 max-sm:grid-cols-4 place-items-center  border-b-2 border-gray-300 gap-4 p-4 '
               >
-                <div className='w-full flex relative '>
+                <div className='w-full flex relative max-sm:hidden '>
                   <Image
                     src={item.image}
                     alt={item.name}
                     width={40}
                     height={40}
-                    className='max-sm:hidden self-start'
+                    className=' self-start'
                   />
                 </div>
                 <div className='w-full text-start'>{item.name}</div>

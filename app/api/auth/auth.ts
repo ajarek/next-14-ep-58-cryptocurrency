@@ -29,7 +29,7 @@ export const {
         username: { type: 'text', required: true },
         password: { type: 'password', required: true },
       },
-      async authorize(credentials: any) {  
+      async authorize(credentials: any) {
         await connectToDb()
         try {
           const user = await User.findOne({ username: credentials.username })
@@ -72,7 +72,7 @@ export const {
           admin: token.admin,
           image: token.image,
         },
-      }     
+      }
     },
 
     async redirect({ url, baseUrl }) {
@@ -83,6 +83,4 @@ export const {
   session: {
     strategy: 'jwt',
   },
-
-  
 })

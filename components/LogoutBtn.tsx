@@ -4,7 +4,6 @@ import { useCartStore } from '@/store/cartStore'
 import { Button } from './ui/button'
 import { useRouter } from 'next/navigation'
 
-
 const LogoutBtn = () => {
   const { removeAll } = useCartStore()
   const router = useRouter()
@@ -14,10 +13,10 @@ const LogoutBtn = () => {
   }
   return (
     <Button
-      variant="destructive"
+      variant='destructive'
       size={'sm'}
       onClick={handleLogout}
-      className="italic"
+      className='italic'
     >
       Logout
     </Button>

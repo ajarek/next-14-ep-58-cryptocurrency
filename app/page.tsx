@@ -40,7 +40,15 @@ export default function Home() {
         prompt4='What crypto asset has the best technology?'
         info='Ask me anything about cryptocurrencies!'
       />
-      <CryptocurrencyTable title='Cryptocurrency list length:' logo='Logo' name='Name' price='Price' price24h='Price change 24h' price24hProcent='Price change % 24h' total='Total volume'/>
+      <CryptocurrencyTable
+        title='Cryptocurrency list length:'
+        logo='Logo'
+        name='Name'
+        price='Price'
+        price24h='Price change 24h'
+        price24hProcent='Price change % 24h'
+        total='Total volume'
+      />
     </main>
   )
 }

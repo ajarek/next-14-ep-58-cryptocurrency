@@ -42,24 +42,22 @@ const MobileNav = () => {
         </SheetHeader>
         <div className='flex flex-col gap-4 mt-4 '>
           <Flags />
-          
-          
-          {items.length>0 &&
-        <Link
-          href='/cart'
-          className={`flex items-center  px-3 rounded-sm `}
-        >
-         
-            <ShoppingCart
-              size={24}
-              className=''
-            />
-            <div className='pb-3 text-red-500'>{items.reduce((acc, item) => acc + item.quantity, 0)}</div>
-          
-        </Link>
-        
-        }
-          
+
+          {items.length > 0 && (
+            <Link
+              href='/cart'
+              className={`flex items-center  px-3 rounded-sm `}
+            >
+              <ShoppingCart
+                size={24}
+                className=''
+              />
+              <div className='pb-3 text-red-500'>
+                {items.reduce((acc, item) => acc + item.quantity, 0)}
+              </div>
+            </Link>
+          )}
+
           <Link
             href='https://bitcoin.org/en/'
             target='_blank'

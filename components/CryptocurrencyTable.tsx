@@ -37,7 +37,7 @@ const CryptocurrencyTable = ({
     setEnd(+target.innerText * 10)
   }
   return (
-    <div className='container p-4'>
+    <div className='container p-4 mt-4'>
       <h1 className='text-xl font-semibold'>
         {title} {crypto.length}
       </h1>

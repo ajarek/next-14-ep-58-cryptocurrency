@@ -99,7 +99,7 @@ const Chatbot = ({
                 width={40}
                 height={40}
               />
-              <span >{prompt3}</span>
+              <span>{prompt3}</span>
             </div>
             <Button
               onClick={() => setPrompt(prompt3)}

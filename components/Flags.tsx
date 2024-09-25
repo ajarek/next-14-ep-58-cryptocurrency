@@ -13,7 +13,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 const Flags = () => {
-  
   const router = useRouter()
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -97,7 +96,6 @@ const Flags = () => {
                 <div>Spanish</div>
               </div>
             </SelectItem>
-            
           </SelectGroup>
         </SelectContent>
       </Select>
