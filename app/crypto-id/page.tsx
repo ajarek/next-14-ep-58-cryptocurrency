@@ -97,11 +97,13 @@ const CryptoId = ({
         <Button
           className='self-center max-w-fit bg-blue-600 text-white  hover:bg-blue-600 transition-colors'
           onClick={() =>
-            handleCart(
-              panel
-                ? panel
-                : { id: '', name: '', current_price: 0, quantity: 0, image: '' }
-            )
+            handleCart({
+              id: Number(panel?.id) || 0,
+              name: panel?.name || '',
+              current_price: panel?.current_price || 0,
+              quantity: quantityPanel,
+              image: panel?.image || '',
+            })
           }
         >
           Add to Cart
