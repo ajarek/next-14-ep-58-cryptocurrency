@@ -39,7 +39,10 @@ export const {
                 user.password
               )
               if (isPasswordCorrect) {
-                return user
+                return {
+                  ...user,
+                  id: user._id.toString(),
+                }
               }
             }
           }catch{
@@ -53,8 +56,10 @@ export const {
 
   callbacks: {
     async jwt({ token, user }) {
-
-      const {id} = user
+      if(!user){
+        return token
+      } 
+      const id = user.id
       const existingUser = await User.findById(id ?? "").lean().exec()
       if(!existingUser) 
         return token
