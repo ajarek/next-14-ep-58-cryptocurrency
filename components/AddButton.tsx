@@ -36,6 +36,7 @@ const AddButton = ({ onClick, array }: Props) => {
             key={inx}
             onClick={onClick}
             className='bg-blue-700 hover:bg-blue-500 text-white focus:bg-blue-500'
+            aria-label={'add button'}
           >
             {inx + 1}
           </Button>

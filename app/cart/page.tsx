@@ -6,14 +6,8 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 const Cart = () => {
-  const {
-    items,
-    increment,
-    decrement,
-    removeItemFromCart,
-    total,
-    removeAll,
-  } = useCartStore()
+  const { items, increment, decrement, removeItemFromCart, total, removeAll } =
+    useCartStore()
   const router = useRouter()
 
   return (
@@ -40,14 +34,17 @@ const Cart = () => {
                 <div className=' max-sm:hidden'>${item.current_price}</div>
 
                 <div className='flex items-center gap-1'>
-                  <button onClick={() => decrement(item.id)}>➖</button>
-                  <div className='flex items-center justify-center  w-[30px] h-[30px] rounded-full border-2 border-gray-500'>{item.quantity}</div>
-                  <button onClick={() => increment(item.id)}>➕</button>
+                  <button onClick={() => decrement(item.id)} aria-label='decrement'>➖</button>
+                  <div className='flex items-center justify-center  w-[30px] h-[30px] rounded-full border-2 border-gray-500'>
+                    {item.quantity}
+                  </div>
+                  <button onClick={() => increment(item.id) } aria-label='increment'>➕</button>
                 </div>
                 <div> ${(item.current_price * item.quantity).toFixed(2)}</div>
                 <div>
-                <button onClick={() => removeItemFromCart(item.id)}>❌</button>
-
+                  <button onClick={() => removeItemFromCart(item.id)} aria-label='remove'>
+                    ❌
+                  </button>
                 </div>
               </div>
             ))}
@@ -59,13 +56,12 @@ const Cart = () => {
             <Button
               variant='destructive'
               onClick={() => removeAll()}
+              aria-label='remove all'
             >
               Delete All
             </Button>
-            <Button
-             onClick={() => router.push('/payment')}
-            >
-             I buy Cryptocurrencies
+            <Button onClick={() => router.push('/payment')} aria-label='go to payment'>
+              I buy Cryptocurrencies
             </Button>
           </div>
         </>

@@ -69,6 +69,7 @@ const Chatbot = ({
               onClick={() => setPrompt(prompt1)}
               size='icon'
               className='min-w-9'
+              aria-label='send message'
             >
               <MoveRight />
             </Button>
@@ -87,6 +88,7 @@ const Chatbot = ({
               onClick={() => setPrompt(prompt2)}
               size='icon'
               className='min-w-9'
+              aria-label='send message' 
             >
               <MoveRight />
             </Button>
@@ -105,6 +107,7 @@ const Chatbot = ({
               onClick={() => setPrompt(prompt3)}
               size='icon'
               className='min-w-9'
+              aria-label='send message'
             >
               <MoveRight />
             </Button>
@@ -123,6 +126,7 @@ const Chatbot = ({
               onClick={() => setPrompt(prompt4)}
               size='icon'
               className='min-w-9'
+              aria-label='send message'
             >
               <MoveRight />
             </Button>
@@ -148,6 +152,7 @@ const Chatbot = ({
           size={'icon'}
           onClick={generateText}
           className='absolute right-2 top-[50%] -translate-y-[50%]  max-sm:translate-y-[80%]'
+          aria-label='send message'
         >
           <Send size={20} />
         </Button>

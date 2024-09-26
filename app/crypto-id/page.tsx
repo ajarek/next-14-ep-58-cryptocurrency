@@ -80,6 +80,7 @@ const CryptoId = ({
             size={'icon'}
             className='bg-transparent rounded-full'
             onClick={() => decrement()}
+            aria-label='Decrement quantity'
           >
             ➖
           </Button>
@@ -90,6 +91,7 @@ const CryptoId = ({
             size={'icon'}
             className='bg-transparent rounded-full'
             onClick={() => increment()}
+            aria-label='Increment quantity'
           >
             ➕
           </Button>
@@ -105,6 +107,7 @@ const CryptoId = ({
               image: panel?.image || '',
             })
           }
+          aria-label='Add to Cart'
         >
           Add to Cart
         </Button>

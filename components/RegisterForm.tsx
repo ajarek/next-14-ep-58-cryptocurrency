@@ -88,6 +88,7 @@ const RegisterForm = () => {
         <Button
           className='bg-[#0E78F9] hover:bg-[#0E78F9]/90'
           type='submit'
+          aria-label='submit'
         >
           Registration
         </Button>

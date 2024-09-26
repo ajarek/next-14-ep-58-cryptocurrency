@@ -37,7 +37,7 @@ const FormPayment = () => {
           className='max-w-[480px] w-full   p-4  rounded-lg border-2 border-gray-400  shadow-sm shadow-gray-400'
         >
           <div className='w-100%'>
-            <Label htmlFor='cardNumber'>Do zapłaty</Label>
+            <Label htmlFor='cardNumber'>To be paid</Label>
             <Input
               type='text'
               value={total()}
@@ -46,7 +46,7 @@ const FormPayment = () => {
           </div>
 
           <div className='w-100%'>
-            <Label htmlFor='cardNumber'>Numer karty</Label>
+            <Label htmlFor='cardNumber'>Card number</Label>
             <Input
               type='text'
               placeholder='1234 5678 9012 3456'
@@ -55,7 +55,7 @@ const FormPayment = () => {
             />
           </div>
           <div className='w-100% '>
-            <Label htmlFor='expiryDate'>Termin ważności</Label>
+            <Label htmlFor='expiryDate'>Expiration date</Label>
             <Input
               type='text'
               placeholder='MM/YYYY'
@@ -75,7 +75,7 @@ const FormPayment = () => {
           </div>
 
           <div className='w-full flex justify-end  mt-4'>
-            <Button type='submit'>Zamawiam i płacę</Button>
+            <Button type='submit' aria-label=''>I order and pay</Button>
           </div>
         </form>
       ) : (

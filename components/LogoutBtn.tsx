@@ -17,6 +17,7 @@ const LogoutBtn = () => {
       size={'sm'}
       onClick={handleLogout}
       className='italic'
+      aria-label='logout'
     >
       Logout
     </Button>
