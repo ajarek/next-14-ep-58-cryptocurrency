@@ -25,6 +25,11 @@ export const {
 
   providers: [
     CredentialsProvider({
+      name: 'Credential',
+      credentials: {
+        username: { type: 'text', required: true },
+        password: { type: 'password', required: true },
+      },
       async authorize(credentials) {
         const validatedFields = LoginSchema.safeParse(credentials)
         if(validatedFields.success){
