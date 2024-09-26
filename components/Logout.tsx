@@ -1,14 +1,8 @@
+import type {Session} from 'next-auth'
 import Link from 'next/link'
 import LogoutBtn from '@/components/LogoutBtn'
 
-interface Session {
-  user?: {
-    name?: string;
-    email?: string;
-    image?: string;
-  };
-  expires?: string;
-}
+
 const Logout = async ({ session }: { session: Session | null }) => {
   return (
     <>

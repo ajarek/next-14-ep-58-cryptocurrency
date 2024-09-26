@@ -1,9 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { User } from '@/lib/models'
+import User from '@/lib/models'
 import connectToDb from '@/lib/connectToDb'
 import bcrypt from 'bcryptjs'
+import { LoginSchema } from "@/schemas/index"
 
 export const {
   auth,
@@ -24,53 +25,62 @@ export const {
 
   providers: [
     CredentialsProvider({
-      name: 'Credential',
-      credentials: {
-        username: { type: 'text', required: true },
-        password: { type: 'password', required: true },
-      },
-      async authorize(credentials: any) {
-        await connectToDb()
-        try {
-          const user = await User.findOne({ username: credentials.username })
-          if (user) {
-            const isPasswordCorrect = await bcrypt.compare(
-              credentials.password,
-              user.password
-            )
-            if (isPasswordCorrect) {
-              return user
+      async authorize(credentials) {
+        const validatedFields = LoginSchema.safeParse(credentials)
+        if(validatedFields.success){
+          await connectToDb()
+          const {username, password} = validatedFields.data
+          try {
+            const user = await User.findOne({ username: username })
+              .lean().exec()
+            if (user) {
+              const isPasswordCorrect = await bcrypt.compare(
+                password,
+                user.password
+              )
+              if (isPasswordCorrect) {
+                return user
+              }
             }
+          }catch{
+            return null
           }
-        } catch (err: any) {
-          throw new Error(err)
         }
+        return null
       },
     }),
   ],
 
   callbacks: {
-    async jwt({ token, user }: any) {
+    async jwt({ token, user }) {
+
+      const {id} = user
+      const existingUser = await User.findById(id ?? "").lean().exec()
+      if(!existingUser) 
+        return token
+
       if (user) {
         return {
           ...token,
-          id: user.id,
-          name: user.username,
-          admin: user.isAdmin,
-          image: user.img,
+          id: existingUser._id.toString(),
+          name: existingUser.username,
+          admin: existingUser.isAdmin,
+          image: existingUser.img,
+          email: existingUser.email,
         }
       }
       return token
     },
-    async session({ session, token }: any) {
+    async session({ session, token }) {     
       return {
         ...session,
         user: {
           ...session.user,
-          id: token.id,
-          name: token.name,
-          admin: token.admin,
-          image: token.image,
+          id: token.id as string,
+          name: token.name as string,
+          admin: token.admin as boolean,
+          image: token.image as string,
+          email: token.email as string,
         },
       }
     },
